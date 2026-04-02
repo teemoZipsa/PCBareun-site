@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC 바른 (PC Bareun) - 당신의 PC를 바르게</title>
+  <meta name="description" content="Windows 10/11을 위한 올인원 PC 관리 유틸리티. 광고 없이, 무료로, 현대적인 UI와 함께 필요한 기능만 담았습니다.">
+  <meta name="keywords" content="PC 바른, PC Bareun, PC 관리, 시스템 최적화, 임시파일 정리, 레지스트리 정리, Windows">
+  <meta property="og:title" content="PC 바른 - 당신의 PC를 바르게">
+  <meta property="og:description" content="Windows 10/11을 위한 올인원 PC 관리 유틸리티">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #6C5CE7;
+      --primary-light: #a29bfe;
+      --primary-dark: #5a4bd1;
+      --accent: #00cec9;
+      --bg: #0a0a0f;
+      --bg-card: #13131a;
+      --bg-card-hover: #1a1a24;
+      --text: #e8e8f0;
+      --text-muted: #8888a0;
+      --border: rgba(108, 92, 231, 0.15);
+      --glow: rgba(108, 92, 231, 0.3);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Animated background */
+    .bg-glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(108,92,231,0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: pulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 10rem 2rem 5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(108,92,231,0.15);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--primary-light);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, var(--primary-light) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      box-shadow: 0 4px 20px var(--glow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      color: var(--text);
+      border-color: var(--primary-light);
+      background: rgba(108,92,231,0.05);
+    }
+
+    /* Screenshots */
+    .screenshots {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+    }
+    .screenshot-main {
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .screenshot-main img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Section */
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(108,92,231,0.1);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Screenshot gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .gallery-item:hover {
+      border-color: var(--primary);
+      transform: scale(1.02);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 0.8rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+      background: var(--bg-card);
+    }
+
+    /* Specs */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .spec-card .spec-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .spec-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .spec-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* License */
+    .license-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .license-box h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+    .license-box p, .license-box ul { color: var(--text-muted); font-size: 0.95rem; }
+    .license-box ul { list-style: none; margin-top: 1rem; }
+    .license-box ul li { padding: 0.3rem 0; }
+    .license-box ul li::before { content: "⚠ "; }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 5rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cta h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 8rem 1.5rem 3rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">🖥️ PC 바른</a>
+      <ul class="nav-links">
+        <li><a href="#features">기능</a></li>
+        <li><a href="#screenshots">스크린샷</a></li>
+        <li><a href="#specs">시스템 요구사항</a></li>
+        <li><a href="#license">라이선스</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <span class="hero-badge">✨ Windows 10/11 전용 · 완전 무료 · 광고 없음</span>
+    <h1>당신의 PC를 바르게.</h1>
+    <p>고클린(GoClean)에서 영감을 받아 만든 차세대 PC 관리 유틸리티. 초보자부터 개발자까지, 필요한 기능만 담았습니다.</p>
+    <div class="btn-group">
+      <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary" id="download-btn">
+        📥 최신 버전 다운로드
+      </a>
+      <a href="#features" class="btn btn-outline">기능 살펴보기 →</a>
+    </div>
+  </header>
+
+  <!-- Main Screenshot -->
+  <div class="screenshots">
+    <div class="screenshot-main">
+      <img src="dashboard.png" alt="PC 바른 대시보드">
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="section-title">
+      <h2>🚀 주요 기능</h2>
+      <p>하나의 앱에서 PC 관리의 모든 것을 해결하세요</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🧹</span>
+        <h3>임시 파일 정리</h3>
+        <p>시스템 임시 파일, 브라우저 캐시, 쿠키, AI 개발 캐시 통합 스캔 및 삭제</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📋</span>
+        <h3>레지스트리 정리</h3>
+        <p>사용하지 않는 레지스트리 항목 12개 카테고리 검색 및 안전 정리</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📁</span>
+        <h3>중복 파일 & 유사 이미지</h3>
+        <p>파일 해시 기반 중복 탐지 + Perceptual Hash 기반 유사 이미지 검출</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚡</span>
+        <h3>시작 프로그램 관리</h3>
+        <p>부팅 시 자동 실행 프로그램 활성화/비활성화로 부팅 속도 향상</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔧</span>
+        <h3>서비스 & 스케줄러 관리</h3>
+        <p>Windows 서비스 및 예약 작업 관리 (시스템 핵심 서비스 자동 보호)</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🛡️</span>
+        <h3>보안 & 개인정보</h3>
+        <p>텔레메트리 차단, DNS 보안, API 키 노출 탐지, 개인정보 일괄 정리</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💾</span>
+        <h3>디스크 건강 진단</h3>
+        <p>S.M.A.R.T. 기반 SSD/HDD 상태 모니터링 (NVMe 완벽 지원)</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🤖</span>
+        <h3>AI & 개발자 도구</h3>
+        <p>AI 모델 관리, Ollama LLM, 포트 점유 확인, 환경변수/PATH, VHDX 압축</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🖥️</span>
+        <h3>Windows 제어</h3>
+        <p>업데이트 일시정지, 전원 옵션, Recall/Copilot 제어, 블루스크린 분석</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌐</span>
+        <h3>네트워크 모니터</h3>
+        <p>네트워크 송수신 속도 및 프로세스별 연결 실시간 모니터링</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🗑️</span>
+        <h3>프로그램 완전 삭제</h3>
+        <p>설치된 프로그램 관리 및 잔여파일까지 완전 삭제</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🌍</span>
+        <h3>다국어 지원</h3>
+        <p>한국어, 영어, 일본어 완벽 지원. 전 세계 사용자를 위한 인터페이스</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="screenshots">
+    <div class="section-title">
+      <h2>📸 스크린샷</h2>
+      <p>깔끔하고 현대적인 UI를 직접 확인하세요</p>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="dashboard.png" alt="대시보드">
+        <div class="gallery-caption">🏠 대시보드 — 시스템 상태 한눈에</div>
+      </div>
+      <div class="gallery-item">
+        <img src="temp_cleaner.png" alt="임시 파일 정리">
+        <div class="gallery-caption">🧹 임시 파일 정리 — 브라우저·시스템 캐시 통합 관리</div>
+      </div>
+      <div class="gallery-item">
+        <img src="ai_optimizer.png" alt="AI 최적화">
+        <div class="gallery-caption">🤖 AI & 개발자 도구 — 대용량 모델 관리</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section id="specs">
+    <div class="section-title">
+      <h2>💻 시스템 요구사항</h2>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="spec-icon">🪟</div>
+        <h3>Windows 10 (1809+) / 11</h3>
+        <p>64비트 (x64) 필수</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🌐</div>
+        <h3>WebView2 Runtime</h3>
+        <p>Windows 11은 기본 포함</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">⚡</div>
+        <h3>Tauri v2 기반</h3>
+        <p>경량 네이티브 앱 (약 10MB)</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🔒</div>
+        <h3>안전 설계</h3>
+        <p>시스템 핵심 서비스 자동 보호</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- License -->
+  <section id="license">
+    <div class="section-title">
+      <h2>📜 라이선스</h2>
+    </div>
+    <div class="license-box">
+      <h3>Copyright © 2026 teemoZipsa (Seonkyu). All Rights Reserved.</h3>
+      <p>이 소프트웨어는 <strong>무료</strong>로 제공되지만, 소스코드의 복제·수정·재배포는 허용되지 않습니다.</p>
+      <ul>
+        <li>소스코드의 전체 또는 일부를 복사, 수정, 병합하는 행위 금지</li>
+        <li>수정 여부와 관계없이 재배포 금지</li>
+        <li>상업적 이용 금지</li>
+        <li>2차 저작물 생성 금지</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>지금 바로 시작하세요</h2>
+    <p>광고 없이, 무료로, 당신의 PC를 바르게.</p>
+    <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary" id="cta-download-btn">
+      📥 무료 다운로드
+    </a>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ by teemoZipsa · © 2026 All Rights Reserved</p>
+  </footer>
+</body>
+</html>

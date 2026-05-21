@@ -531,8 +531,8 @@
     <div class="wrap hero-inner">
       <span class="eyebrow">
         <span class="dot"></span>
-        <span class="pill">v0.2.10</span>
-        2026.05.18 · 새 릴리즈가 도착했습니다
+        <span class="pill">v0.2.13</span>
+        2026.05.08 · 최신 릴리즈가 도착했습니다
       </span>
 
       <h1>
@@ -759,9 +759,9 @@
 
       <div class="release-wrap">
         <div class="release-list" role="tablist">
-          <button class="release-pill active" data-rel="v0210" type="button">
-            <span class="ver">v0.2.10</span>
-            <span class="label">안정성 · UI/UX</span>
+          <button class="release-pill active" data-rel="v0213" type="button">
+            <span class="ver">v0.2.13</span>
+            <span class="label">안정성 · 업데이트</span>
             <span class="date">May 2026</span>
           </button>
           <button class="release-pill" data-rel="v020" type="button">
@@ -777,33 +777,31 @@
         </div>
 
         <div class="release-doc">
-          <div data-doc="v0210">
-            <h3>안정성 및 UI/UX 개선 <span class="v">v0.2.10</span></h3>
-            <div class="updated">최신 릴리즈 · 2026.05.18</div>
+          <div data-doc="v0213">
+            <h3>런타임 안정성 및 릴리즈 개선 <span class="v">v0.2.13</span></h3>
+            <div class="updated">최신 릴리즈 · 2026.05.08</div>
 
             <div class="group">
               <h4>안정성 <span class="badge">FIX</span></h4>
               <ul>
-                <li><strong>대시보드 동시성 제어</strong> — 새로고침 연타 시 무한 로딩이 발생하던 문제와 백그라운드 데이터 갱신 로직을 안정화했습니다.</li>
-                <li><strong>시작 프로그램 관리자 개선</strong> — 동일 이름 항목(현재 사용자 / 모든 사용자)에서 토글 상태가 뒤섞이는 문제를 해결.</li>
-                <li><strong>시스템 정보 예외 처리</strong> — GPU 센서 로드 실패 시 이전 값이 남던 현상을 0/null로 올바르게 초기화.</li>
-                <li><strong>디스크 데이터 방어</strong> — S.M.A.R.T. 비정상 응답(Null) 시에도 대시보드가 멈추지 않도록 가드 추가.</li>
+                <li><strong>GitHub Actions 빌드 복구</strong> — <code>tauri.conf.json</code>의 BOM 문제를 제거해 릴리즈 빌드 실패를 해결했습니다.</li>
+                <li><strong>런타임 안정성 개선</strong> — 에러 바운더리, 렌더링 최적화, 상태 꼬임 방지 로직을 보강했습니다.</li>
+                <li><strong>우클릭 메뉴 관리 개선</strong> — 스캔 타임아웃 오류를 줄이고 백엔드 처리 성능을 최적화했습니다.</li>
               </ul>
             </div>
 
             <div class="group">
-              <h4>다국어 무결성 <span class="badge feat">I18N</span></h4>
+              <h4>업데이트 배포 <span class="badge feat">UPDATE</span></h4>
               <ul>
-                <li><strong>전용 번역 헬퍼(<code>tf</code>)</strong> 도입 — 키 누락 시에도 깨지지 않는 폴백 시스템.</li>
-                <li>설정 · 시작 프로그램의 하드코딩 라벨(HKCU 등)에 동적 번역 적용.</li>
+                <li><strong>최신 버전 매니페스트 개선</strong> — <code>latest.json</code> 추출과 다운로드 우선순위를 안정화했습니다.</li>
+                <li>공식 다운로드 경로가 최신 릴리즈 설치 파일을 우선 제공하도록 정리했습니다.</li>
               </ul>
             </div>
 
             <div class="group">
               <h4>코드베이스 <span class="badge">CHORE</span></h4>
               <ul>
-                <li>React Type Import 표준화로 <code>React.ReactNode</code> 네임스페이스 오류 선제 차단.</li>
-                <li>VRAM/RAM 확보량 계산이 음수가 되던 예외 케이스 차단.</li>
+                <li>앱 버전을 <code>0.2.13</code>으로 올리고 릴리즈 준비 파일을 정리했습니다.</li>
               </ul>
             </div>
           </div>
@@ -946,7 +944,7 @@
       <div class="hero-ctas">
         <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          v0.2.10 Windows용 다운로드
+          v0.2.13 Windows용 다운로드
         </a>
         <a href="#release" class="btn btn-on-dark btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6" stroke-linecap="round"/></svg>

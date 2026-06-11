@@ -531,8 +531,8 @@
     <div class="wrap hero-inner">
       <span class="eyebrow">
         <span class="dot"></span>
-        <span class="pill">v0.2.13</span>
-        2026.05.08 · 최신 릴리즈가 도착했습니다
+        <span class="pill">v0.3.2</span>
+        2026.06.11 · 최신 릴리즈가 도착했습니다
       </span>
 
       <h1>
@@ -759,9 +759,29 @@
 
       <div class="release-wrap">
         <div class="release-list" role="tablist">
-          <button class="release-pill active" data-rel="v0213" type="button">
+          <button class="release-pill active" data-rel="v032" type="button">
+            <span class="ver">v0.3.2</span>
+            <span class="label">작업 흐름 · 타이틀</span>
+            <span class="date">Jun 2026</span>
+          </button>
+          <button class="release-pill" data-rel="v031" type="button">
+            <span class="ver">v0.3.1</span>
+            <span class="label">보안 강화</span>
+            <span class="date">Jun 2026</span>
+          </button>
+          <button class="release-pill" data-rel="v030" type="button">
+            <span class="ver">v0.3.0</span>
+            <span class="label">리메이크</span>
+            <span class="date">Jun 2026</span>
+          </button>
+          <button class="release-pill" data-rel="v0214" type="button">
+            <span class="ver">v0.2.14</span>
+            <span class="label">릴리즈 안정화</span>
+            <span class="date">Jun 2026</span>
+          </button>
+          <button class="release-pill" data-rel="v0213" type="button">
             <span class="ver">v0.2.13</span>
-            <span class="label">안정성 · 업데이트</span>
+            <span class="label">업데이트 복구</span>
             <span class="date">May 2026</span>
           </button>
           <button class="release-pill" data-rel="v020" type="button">
@@ -777,9 +797,109 @@
         </div>
 
         <div class="release-doc">
-          <div data-doc="v0213">
+          <div data-doc="v032">
+            <h3>작업 흐름 중심 UI/UX 개선 <span class="v">v0.3.2</span></h3>
+            <div class="updated">최신 릴리즈 · 2026.06.11</div>
+
+            <div class="group">
+              <h4>작업 흐름 <span class="badge feat">UX</span></h4>
+              <ul>
+                <li><strong>대시보드 목적 허브</strong> — 공간 확보, 앱 정리, 속도 개선, 네트워크 점검, 보안 점검, AI·개발 환경처럼 사용자의 목적 기준으로 바로 진입할 수 있게 구성했습니다.</li>
+                <li><strong>AI·개발 환경 진입점 재정리</strong> — 모델 정리, Ollama 관리, VHDX 압축, 포트 점유, PATH 점검, API 키 노출 점검을 작업 카드로 묶었습니다.</li>
+                <li><strong>중복 파일 정리 흐름 개선</strong> — 정확한 중복, 사진·영상 유사도, 빈 폴더 정리를 목적별 카드로 나누어 “무엇을 정리할지”부터 선택하도록 바꿨습니다.</li>
+                <li><strong>네트워크 점검 흐름 개선</strong> — 인터넷 끊김/느림, 게임·영상 반응성, 보안 설정 의심 상황을 기준으로 진입점을 정리했습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>정보 노출 최소화 <span class="badge sec">PRIVACY</span></h4>
+              <ul>
+                <li><strong>전체 경로 기본 노출 축소</strong> — AI 모델, 중복 파일, 환경변수, VHDX, Defender 제외 항목 등에서 긴 파일 경로를 기본 화면에 바로 노출하지 않도록 조정했습니다.</li>
+                <li><strong>기술 정보 분리</strong> — hosts 원문, 파일 위치, PATH 세부 정보는 상세 메뉴나 추가 정보 영역에서 필요할 때만 확인하도록 정리했습니다.</li>
+                <li><strong>보안 점검 결과 표현 개선</strong> — 노출 후보 파일의 전체 경로 대신 줄 번호와 요약을 먼저 보여주도록 바꿨습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>릴리즈 · 자동 업데이트 <span class="badge">UPDATE</span></h4>
+              <ul>
+                <li><strong>언어별 타이틀바</strong> — 창 제목이 현재 선택한 언어의 앱 이름과 버전으로 표시됩니다. 예: <code>PC 바른 0.3.2</code>, <code>PC Bareun 0.3.2</code>.</li>
+                <li><strong>버전 정합성 정리</strong> — 앱, npm 패키지, Cargo 패키지, Tauri 설정 버전을 <code>0.3.2</code>로 맞췄습니다.</li>
+                <li><strong>자동 업데이트 유지</strong> — GitHub Actions의 Tauri 서명 키 기반 빌드로 <code>latest.json</code> 자동 업데이트 매니페스트가 함께 생성됩니다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-doc="v031" hidden>
+            <h3>백엔드 보안 강화 <span class="v">v0.3.1</span></h3>
+            <div class="updated">2026.06.11</div>
+
+            <div class="group">
+              <h4>보안 <span class="badge sec">SECURITY</span></h4>
+              <ul>
+                <li><strong>삭제 명령 경로 보호</strong> — 중복 파일, 유사 이미지/영상, 잔여 파일, AI 모델, 빈 폴더 삭제 시 보호된 시스템 경로 하위 트리까지 차단합니다.</li>
+                <li><strong>감사 로그 도입</strong> — 파일 삭제, 레지스트리 수정, Defender 설정 변경 등 파괴적 작업을 <code>audit.log</code>에 기록합니다.</li>
+                <li><strong>고위험 작업 확인 강화</strong> — Windows Defender 제외 경로 추가와 고위험 임시파일 카테고리에 별도 확인을 추가했습니다.</li>
+                <li><strong>PowerShell 인젝션 방어 통일</strong> — 산재된 문자열 이스케이프를 단일 <code>ps_quote()</code> 함수로 정리했습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>안정성 <span class="badge">FIX</span></h4>
+              <ul>
+                <li>AI 캐시 이동 시 환경변수 기반 경로를 삭제 전 검증해 시스템 디렉터리 삭제 시나리오를 차단했습니다.</li>
+                <li>비UTF-8 경로나 시스템 시각 오류에서 프로그램이 비정상 종료될 가능성을 줄였습니다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-doc="v030" hidden>
+            <h3>대규모 리메이크 <span class="v">v0.3.0</span></h3>
+            <div class="updated">2026.06.10</div>
+
+            <div class="group">
+              <h4>리메이크 핵심 <span class="badge feat">NEW</span></h4>
+              <ul>
+                <li><strong>대시보드 전면 리메이크</strong> — 요약 허브 중심으로 개편하고, 지표 스무딩과 오래된 폴링 결과 무시 처리로 수치 안정성을 높였습니다.</li>
+                <li><strong>전 기능 UX 단순화</strong> — 정리, 파일, 시스템, 고급 도구 전반의 작업 흐름을 더 단순하고 일관되게 재설계했습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>기능별 개선 <span class="badge">UX</span></h4>
+              <ul>
+                <li>임시 파일 정리, 레지스트리 클리너, 프로그램 정리, 기본 앱 정리 흐름을 단순화했습니다.</li>
+                <li>강제 삭제, 중복 파인더, 유사 이미지/영상, 빈 폴더 탭의 상태 표현과 동선을 정리했습니다.</li>
+                <li>AI 옵티마이저, 프로세스 부스터, 포트 모니터, 환경변수 관리자, VHDX 압축, 드라이버 클리너, Windows 제어 UX를 다듬었습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>자동 업데이트 <span class="badge">FIX</span></h4>
+              <ul>
+                <li>업데이트 권한 누락과 재시작 플러그인 미등록 문제를 해결해 설정의 업데이트 확인과 자동 업데이트가 정상 작동하도록 복구했습니다.</li>
+                <li>Secure Erase dry-run 기능을 debug 빌드에서만 허용하도록 컴파일 타임 가드를 추가했습니다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-doc="v0214" hidden>
+            <h3>릴리즈 안정화 <span class="v">v0.2.14</span></h3>
+            <div class="updated">2026.06.03</div>
+
+            <div class="group">
+              <h4>배포 <span class="badge">CHORE</span></h4>
+              <ul>
+                <li><strong>버전 정합성 개선</strong> — 0.3.x 리메이크 전 릴리즈 준비 과정에서 버전 표기와 산출물 구성을 정리했습니다.</li>
+                <li><strong>배포 파이프라인 점검</strong> — GitHub Release와 공개 사이트 릴리즈 동기화 흐름을 점검했습니다.</li>
+                <li><strong>업데이트 경로 유지</strong> — 기존 사용자들이 새 설치 파일과 자동 업데이트 경로를 계속 사용할 수 있도록 배포 구성을 유지했습니다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-doc="v0213" hidden>
             <h3>런타임 안정성 및 릴리즈 개선 <span class="v">v0.2.13</span></h3>
-            <div class="updated">최신 릴리즈 · 2026.05.08</div>
+            <div class="updated">2026.05.08</div>
 
             <div class="group">
               <h4>안정성 <span class="badge">FIX</span></h4>
@@ -944,7 +1064,7 @@
       <div class="hero-ctas">
         <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          v0.2.13 Windows용 다운로드
+          v0.3.2 Windows용 다운로드
         </a>
         <a href="#release" class="btn btn-on-dark btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6" stroke-linecap="round"/></svg>

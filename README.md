@@ -6,8 +6,8 @@
 
 Windows 10/11을 위한 올인원 PC 관리 유틸리티
 
-[![Website](https://img.shields.io/badge/🌐_공식_사이트-teemozipsa.github.io-6C5CE7?style=for-the-badge)](https://teemozipsa.github.io/PCBareun-site/)
-[![Download](https://img.shields.io/badge/📥_다운로드-최신_버전-00cec9?style=for-the-badge)](https://pcbareun-updater-proxy.teemozipsa.workers.dev/download)
+[![공식 사이트](https://img.shields.io/badge/🌐_공식_사이트-teemozipsa.github.io-6C5CE7?style=for-the-badge)](https://teemozipsa.github.io/PCBareun-site/)
+[![다운로드](https://img.shields.io/badge/📥_다운로드-최신_버전-00cec9?style=for-the-badge)](https://pcbareun-updater-proxy.teemozipsa.workers.dev/download)
 [![Windows](https://img.shields.io/badge/Windows_10%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://pcbareun-updater-proxy.teemozipsa.workers.dev/download)
 
 </div>
@@ -58,7 +58,7 @@ Windows 10/11을 위한 올인원 PC 관리 유틸리티
 
 <div align="center">
 
-**Made with ❤️ for PC Health**
+**PC를 바르게 쓰기 위해 만들었습니다**
 
 [🌐 공식 사이트](https://teemozipsa.github.io/PCBareun-site/)
 

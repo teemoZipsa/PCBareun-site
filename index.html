@@ -517,7 +517,7 @@
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
           GitHub
         </a>
-        <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary">
+        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-primary">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
           다운로드
         </a>
@@ -531,8 +531,8 @@
     <div class="wrap hero-inner">
       <span class="eyebrow">
         <span class="dot"></span>
-        <span class="pill">v0.3.2</span>
-        2026.06.11 · 최신 릴리즈가 도착했습니다
+        <span class="pill">v0.4.2</span>
+        2026.07.04 · 최신 릴리즈가 도착했습니다
       </span>
 
       <h1>
@@ -546,7 +546,7 @@
       </p>
 
       <div class="hero-ctas">
-        <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary btn-lg">
+        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-primary btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
           Windows용 다운로드
         </a>
@@ -561,7 +561,7 @@
         <span>•</span>
         <span>완전 무료 · 광고 없음</span>
         <span>•</span>
-        <span>약 10MB · Tauri v2 네이티브</span>
+        <span>WebView2 포함 설치 파일 · Tauri v2 네이티브</span>
       </div>
     </div>
 
@@ -754,12 +754,17 @@
       <div class="section-head">
         <span class="section-tag">CHANGELOG</span>
         <h2>꾸준한 업데이트, 명확한 기록.</h2>
-        <p>모든 변경 사항은 공개되어 있으며 자동 업데이트로 전달됩니다.</p>
+        <p>모든 변경 사항은 공개되어 있으며 최신 설치 파일은 공식 다운로드 경로로 제공합니다.</p>
       </div>
 
       <div class="release-wrap">
         <div class="release-list" role="tablist">
-          <button class="release-pill active" data-rel="v032" type="button">
+          <button class="release-pill active" data-rel="v042" type="button">
+            <span class="ver">v0.4.2</span>
+            <span class="label">Store 안정화 · 공간 추천</span>
+            <span class="date">Jul 2026</span>
+          </button>
+          <button class="release-pill" data-rel="v032" type="button">
             <span class="ver">v0.3.2</span>
             <span class="label">작업 흐름 · 타이틀</span>
             <span class="date">Jun 2026</span>
@@ -797,9 +802,41 @@
         </div>
 
         <div class="release-doc">
-          <div data-doc="v032">
+          <div data-doc="v042">
+            <h3>Store 안정화와 공간 확보 추천 개선 <span class="v">v0.4.2</span></h3>
+            <div class="updated">최신 릴리즈 · 2026.07.04</div>
+
+            <div class="group">
+              <h4>Store 안정화 <span class="badge sec">STORE</span></h4>
+              <ul>
+                <li><strong>Store 빌드 동작 정리</strong> — Microsoft Store 빌드에서 직접 폴더 열기처럼 심사에 민감한 동작은 숨기고, 직접 다운로드 빌드에서는 기존 편의 기능을 유지했습니다.</li>
+                <li><strong>제출 버전 재사용 방지</strong> — 이미 제출한 패키지 버전을 다시 빌드하거나 업로드하지 않도록 릴리스 잠금과 preflight 검사를 추가했습니다.</li>
+                <li><strong>패키징 검증 강화</strong> — Store용 MSIX 버전, manifest, SHA256 기록, 임시 산출물 부재를 한 번에 확인하는 검증 흐름을 정리했습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>공간 확보 추천 <span class="badge feat">UX</span></h4>
+              <ul>
+                <li><strong>추천 항목 설명 보강</strong> — 다운로드, 미디어, 임시 파일, 캐시, 휴지통, 사용자 파일을 카테고리로 구분하고 다음 확인 단계를 함께 보여줍니다.</li>
+                <li><strong>복구 안내 추가</strong> — 개인 파일 삭제는 시스템 복원 지점으로 되돌릴 수 없다는 점을 명확히 안내합니다.</li>
+                <li><strong>새로고침 실패 처리 개선</strong> — 기존 결과가 있는 상태에서 재스캔이 실패해도 목록을 지우지 않고 재시도 안내를 표시합니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>품질 · 릴리즈 <span class="badge">QA</span></h4>
+              <ul>
+                <li><strong>Tauri 명령 검사 강화</strong> — 생성된 바인딩 사용과 직접 <code>invoke(...)</code> 호출을 함께 검사해 누락된 백엔드 명령을 더 빨리 잡습니다.</li>
+                <li><strong>후보 릴리스 검증 정리</strong> — WinGet manifest가 아직 없는 후보 빌드는 placeholder 없이 검증하고, 실제 릴리스 전에는 strict 검사를 유지합니다.</li>
+                <li><strong>0.4.2 배포 자산</strong> — Windows용 EXE/MSI 설치 파일을 최신 릴리스로 제공합니다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-doc="v032" hidden>
             <h3>작업 흐름 중심 UI/UX 개선 <span class="v">v0.3.2</span></h3>
-            <div class="updated">최신 릴리즈 · 2026.06.11</div>
+            <div class="updated">2026.06.11</div>
 
             <div class="group">
               <h4>작업 흐름 <span class="badge feat">UX</span></h4>
@@ -821,11 +858,11 @@
             </div>
 
             <div class="group">
-              <h4>릴리즈 · 자동 업데이트 <span class="badge">UPDATE</span></h4>
+              <h4>릴리즈 · 배포 <span class="badge">UPDATE</span></h4>
               <ul>
                 <li><strong>언어별 타이틀바</strong> — 창 제목이 현재 선택한 언어의 앱 이름과 버전으로 표시됩니다. 예: <code>PC 바른 0.3.2</code>, <code>PC Bareun 0.3.2</code>.</li>
                 <li><strong>버전 정합성 정리</strong> — 앱, npm 패키지, Cargo 패키지, Tauri 설정 버전을 <code>0.3.2</code>로 맞췄습니다.</li>
-                <li><strong>자동 업데이트 유지</strong> — GitHub Actions의 Tauri 서명 키 기반 빌드로 <code>latest.json</code> 자동 업데이트 매니페스트가 함께 생성됩니다.</li>
+                <li><strong>릴리스 산출물 정리</strong> — GitHub 릴리스의 설치 파일과 다운로드 경로가 같은 버전을 가리키도록 배포 흐름을 점검했습니다.</li>
               </ul>
             </div>
           </div>
@@ -981,7 +1018,7 @@
       <div class="section-head">
         <span class="section-tag">SYSTEM REQUIREMENTS</span>
         <h2>가벼움이 기본 사양.</h2>
-        <p>설치 용량 약 10MB, Tauri v2 기반 네이티브 앱. Electron이 아닙니다.</p>
+        <p>WebView2 오프라인 설치 파일을 함께 제공하는 Tauri v2 기반 네이티브 앱. Electron이 아닙니다.</p>
       </div>
 
       <div class="specs-grid">
@@ -1000,8 +1037,8 @@
         <div class="spec">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round"/></svg></div>
           <div class="label">SIZE</div>
-          <div class="value">약 10 MB</div>
-          <div class="hint">Tauri v2 네이티브 · Rust 백엔드</div>
+          <div class="value">약 200 MB</div>
+          <div class="hint">WebView2 포함 설치 파일 · Rust 백엔드</div>
         </div>
         <div class="spec">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke-linejoin="round"/></svg></div>
@@ -1043,8 +1080,8 @@
         </details>
 
         <details class="qa">
-          <summary>자동 업데이트는 어떻게 동작하나요?<span class="caret"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
-          <div class="answer">앱이 시작될 때 자체 업데이터가 새 버전을 확인하고, 사용자 승인을 받은 뒤 백그라운드에서 다운로드 및 설치합니다. 강제 업데이트는 하지 않습니다.</div>
+          <summary>업데이트는 어떻게 받나요?<span class="caret"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
+          <div class="answer">직접 다운로드 버전은 공식 다운로드 버튼에서 최신 설치 파일을 받아 설치하면 됩니다. Microsoft Store 설치본은 Store 업데이트 경로를 사용합니다.</div>
         </details>
 
         <details class="qa">
@@ -1060,11 +1097,11 @@
     <div class="wrap cta-inner">
       <span class="section-tag" style="color:#5fc8cd;">GET STARTED</span>
       <h2>광고 없이, 무료로,<br/>당신의 PC를 바르게.</h2>
-      <p>다운로드 후 압축을 풀고 실행하면 끝. 한 번의 클릭으로 시작합니다.</p>
+      <p>최신 Windows 설치 파일을 내려받아 실행하면 됩니다.</p>
       <div class="hero-ctas">
-        <a href="https://pcbareun-updater-proxy.teemozipsa.workers.dev/download" class="btn btn-primary btn-lg">
+        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-primary btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          v0.3.2 Windows용 다운로드
+          v0.4.2 Windows용 다운로드
         </a>
         <a href="#release" class="btn btn-on-dark btn-lg">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6" stroke-linecap="round"/></svg>
@@ -1072,7 +1109,7 @@
         </a>
       </div>
       <div class="hero-meta">
-        <span><span class="dot"></span> 현재 안정 버전 · 자동 업데이트 포함</span>
+        <span><span class="dot"></span> 현재 안정 버전 · 공식 다운로드 제공</span>
       </div>
     </div>
   </section>

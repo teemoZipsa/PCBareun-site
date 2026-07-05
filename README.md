@@ -4,11 +4,11 @@
 
 **당신의 PC를 바르게.**
 
-Windows 10/11을 위한 올인원 PC 관리 유틸리티
+Windows 10/11을 위한 올인원 PC 관리 유틸리티 · 최신 안정 버전 v0.4.2
 
 [![공식 사이트](https://img.shields.io/badge/🌐_공식_사이트-teemozipsa.github.io-6C5CE7?style=for-the-badge)](https://teemozipsa.github.io/PCBareun-site/)
-[![다운로드](https://img.shields.io/badge/📥_다운로드-최신_버전-00cec9?style=for-the-badge)](https://pcbareun-updater-proxy.teemozipsa.workers.dev/download)
-[![Windows](https://img.shields.io/badge/Windows_10%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://pcbareun-updater-proxy.teemozipsa.workers.dev/download)
+[![다운로드](https://img.shields.io/badge/📥_다운로드-v0.4.2-00cec9?style=for-the-badge)](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)
+[![Windows](https://img.shields.io/badge/Windows_10%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)
 
 </div>
 
@@ -39,7 +39,7 @@ Windows 10/11을 위한 올인원 PC 관리 유틸리티
 
 ## 📥 다운로드
 
-**[👉 최신 버전 다운로드](https://pcbareun-updater-proxy.teemozipsa.workers.dev/download)**
+**[👉 v0.4.2 최신 버전 다운로드](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)**
 
 ### 시스템 요구사항
 - Windows 10 (1809 이상) 또는 Windows 11

@@ -1,142 +1,584 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PC Bareun Support</title>
+    <title>PC Bareun Support Contact Information</title>
+    <meta
+      name="description"
+      content="PC Bareun support contact information. Bugs, installation issues, feature requests, and privacy questions can be submitted through GitHub Issues."
+    />
     <style>
       :root {
         color-scheme: light dark;
+        --bg: #f5f7fb;
+        --paper: #ffffff;
+        --paper-soft: #f0f5ff;
+        --text: #172033;
+        --muted: #667085;
+        --border: #d9e1ee;
+        --accent: #2458e6;
+        --accent-strong: #173eb2;
+        --warn: #a15c00;
         font-family:
           Pretendard,
           -apple-system,
           BlinkMacSystemFont,
           "Segoe UI",
           sans-serif;
-        line-height: 1.6;
+        line-height: 1.68;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        color: #172033;
-        background: #f7f8fb;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(36, 88, 230, 0.10), transparent 30rem),
+          var(--bg);
       }
 
-      main {
-        width: min(920px, calc(100% - 32px));
+      a {
+        color: var(--accent);
+        text-underline-offset: 3px;
+      }
+
+      .shell {
+        width: min(1040px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 48px 0;
+        padding: 34px 0 54px;
       }
 
-      article {
-        padding: 32px;
-        border: 1px solid #d8deea;
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      .mark {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid var(--border);
         border-radius: 8px;
-        background: #ffffff;
+        background: var(--paper);
+        color: var(--accent-strong);
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 14px;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      nav a[aria-current="page"],
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 6px 0 24px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--accent-strong);
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
       }
 
       h1,
-      h2 {
+      h2,
+      h3 {
         line-height: 1.25;
       }
 
       h1 {
-        margin: 0 0 8px;
-        font-size: 32px;
+        max-width: 820px;
+        margin: 0;
+        font-size: clamp(32px, 5vw, 48px);
+      }
+
+      .lede {
+        max-width: 820px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .language-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .language-links a {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        padding: 0 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--paper);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      .document {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .contact {
+        padding: 24px;
+        background: var(--paper-soft);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .contact span {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .contact a {
+        font-size: 18px;
+        font-weight: 750;
+      }
+
+      .content {
+        padding: 34px;
       }
 
       h2 {
-        margin-top: 32px;
-        font-size: 20px;
+        margin: 38px 0 10px;
+        font-size: 22px;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      h3 {
+        margin: 26px 0 8px;
+        font-size: 17px;
       }
 
       p,
-      li {
+      li,
+      td,
+      th {
         font-size: 15px;
       }
 
-      .meta {
-        margin: 0 0 28px;
-        color: #667085;
+      p {
+        margin: 10px 0;
       }
 
-      a {
-        color: #1f5eff;
+      ul {
+        margin: 10px 0 0;
+        padding-left: 1.25rem;
+      }
+
+      li + li {
+        margin-top: 4px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 16px 0 8px;
+      }
+
+      .card {
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .card strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .table-wrap {
+        margin: 16px 0 8px;
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        min-width: 700px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 13px 14px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--paper-soft);
+        font-weight: 750;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .warning {
+        margin: 18px 0;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--warn);
+        border-radius: 8px;
+        background: var(--paper-soft);
+      }
+
+      code {
+        font-family: Consolas, "Cascadia Mono", monospace;
+        font-size: 0.94em;
+      }
+
+      .localized-section {
+        margin-top: 42px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          justify-content: flex-start;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          padding: 24px;
+        }
       }
 
       @media (prefers-color-scheme: dark) {
-        body {
-          color: #e7edf8;
-          background: #101624;
-        }
-
-        article {
-          border-color: #263248;
-          background: #141c2b;
-        }
-
-        .meta {
-          color: #aab4c5;
-        }
-
-        a {
-          color: #8fb2ff;
+        :root {
+          --bg: #101624;
+          --paper: #141c2b;
+          --paper-soft: #182237;
+          --text: #e7edf8;
+          --muted: #aab4c5;
+          --border: #29354c;
+          --accent: #90b4ff;
+          --accent-strong: #b7ccff;
+          --warn: #ffc46d;
         }
       }
     </style>
   </head>
   <body>
-    <main>
-      <article>
-        <h1>PC Bareun Support</h1>
-        <p class="meta">Last updated: 2026-06-18</p>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">
+          <span class="mark" aria-hidden="true">PC</span>
+          <span>PC Bareun</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Website</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="support.html" aria-current="page">Support</a>
+        </nav>
+      </header>
 
-        <h2>지원 문의</h2>
-        <p>
-          PC Bareun 사용 중 오류, 설치 문제, 기능 제안, 개인정보 관련 문의가 있으면 GitHub Issues에 내용을 남겨 주세요.
-        </p>
-        <p>
-          지원 접수:
-          <a href="https://github.com/teemoZipsa/PCBareun/issues">https://github.com/teemoZipsa/PCBareun/issues</a>
-        </p>
+      <main>
+        <section class="hero">
+          <p class="eyebrow">Last updated: 2026-07-09</p>
+          <h1>PC Bareun Support Contact Information</h1>
+          <p class="lede">
+            Bug reports, installation issues, feature requests, and privacy questions are handled through GitHub Issues. Include the app
+            version, Windows version, and reproduction steps so the issue can be reviewed efficiently.
+          </p>
+          <div class="language-links" aria-label="Language sections">
+            <a href="#en">English</a>
+            <a href="#ko">한국어</a>
+            <a href="#ja">日本語</a>
+          </div>
+        </section>
 
-        <h2>문의할 때 포함하면 좋은 정보</h2>
-        <ul>
-          <li>PC Bareun 버전</li>
-          <li>Windows 버전과 빌드 번호</li>
-          <li>문제가 발생한 기능 이름</li>
-          <li>오류 메시지 또는 스크린샷</li>
-          <li>문제가 반복되는 단계</li>
-        </ul>
+        <article class="document">
+          <section class="contact" aria-label="Primary support contact">
+            <span>Support URL</span>
+            <a href="https://github.com/teemoZipsa/PCBareun/issues">https://github.com/teemoZipsa/PCBareun/issues</a>
+          </section>
 
-        <h2>로컬 로그 위치</h2>
-        <p>오류 진단에 필요한 경우 아래 위치의 로그 파일을 확인할 수 있습니다.</p>
-        <p><code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
-        <p>로그에 개인 경로 또는 파일명이 포함될 수 있으므로 공유 전 내용을 확인해 주세요.</p>
+          <section class="content">
+            <h2 id="en">Support Scope</h2>
+            <div class="grid" aria-label="Support categories">
+              <div class="card">
+                <strong>Install And Launch</strong>
+                <span>Microsoft Store installs, direct installs, launch errors, and update-related issues</span>
+              </div>
+              <div class="card">
+                <strong>Feature Issues</strong>
+                <span>Cleanup, diagnostics, duplicate detection, disk health, network diagnostics, and other app feature problems</span>
+              </div>
+              <div class="card">
+                <strong>Privacy Questions</strong>
+                <span>Local logs, cleanup targets, network requests, and information shared during support</span>
+              </div>
+            </div>
 
-        <h2>Support</h2>
-        <p>
-          For bugs, installation issues, feature requests, or privacy questions, submit a GitHub Issue with the relevant details.
-        </p>
-        <p>
-          Support URL:
-          <a href="https://github.com/teemoZipsa/PCBareun/issues">https://github.com/teemoZipsa/PCBareun/issues</a>
-        </p>
+            <h2>Helpful Details To Include</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Example</th>
+                    <th>Why It Helps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>App version</td>
+                    <td>PC Bareun 0.4.6</td>
+                    <td>Helps confirm whether the issue has already been fixed.</td>
+                  </tr>
+                  <tr>
+                    <td>Install source</td>
+                    <td>Microsoft Store / GitHub Release / direct install</td>
+                    <td>Update behavior and permissions can differ by distribution channel.</td>
+                  </tr>
+                  <tr>
+                    <td>Windows information</td>
+                    <td>Windows 11 24H2 and build number</td>
+                    <td>Windows version differences can affect file permissions and system features.</td>
+                  </tr>
+                  <tr>
+                    <td>Affected feature</td>
+                    <td>Temporary file cleanup, duplicate detection, disk health</td>
+                    <td>Helps narrow down the relevant logs and code path.</td>
+                  </tr>
+                  <tr>
+                    <td>Steps to reproduce</td>
+                    <td>1. Open app 2. Start temp cleanup 3. Error appears during scan</td>
+                    <td>Needed to reproduce the same problem in a development environment.</td>
+                  </tr>
+                  <tr>
+                    <td>Error message or screenshot</td>
+                    <td>Error text, screenshot, or local log excerpt</td>
+                    <td>Helps identify the cause more quickly.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-        <h2>Helpful Details</h2>
-        <ul>
-          <li>PC Bareun version</li>
-          <li>Windows version and build number</li>
-          <li>Feature where the issue occurred</li>
-          <li>Error message or screenshot</li>
-          <li>Steps to reproduce the issue</li>
-        </ul>
+            <div class="warning">
+              <strong>Before posting a public issue</strong>
+              <p>
+                GitHub Issues may be public. Before posting, remove or hide sensitive details such as screenshots, logs, file paths, user
+                names, document names, account information, and license information.
+              </p>
+            </div>
 
-        <h2>Local Logs</h2>
-        <p>For troubleshooting, local logs may be available at:</p>
-        <p><code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
-        <p>Logs may include local paths or file names, so review them before sharing.</p>
-      </article>
-    </main>
+            <h2>Install And Update</h2>
+            <ul>
+              <li>Microsoft Store builds of PC Bareun are updated through Microsoft Store.</li>
+              <li>If a Store update is not visible, open the Microsoft Store library and check for updates.</li>
+              <li>For GitHub or direct-install builds, check the latest release on the distribution page.</li>
+              <li>If possible, confirm that the issue still occurs on the latest version before filing a report.</li>
+            </ul>
+
+            <h2>Local Logs</h2>
+            <p>For troubleshooting, PC Bareun local logs may be available at:</p>
+            <p><code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+            <p>Logs are stored on the user's device and are not transmitted unless the user chooses to attach or share them.</p>
+
+            <h2>Privacy Questions</h2>
+            <p>
+              Privacy details are available in the <a href="privacy.html">privacy policy</a>. Privacy inquiries can also be submitted through
+              the same GitHub Issues support path.
+            </p>
+
+            <section class="localized-section" id="ko" lang="ko">
+            <h2>지원 연락처 정보 (한국어)</h2>
+
+            <h3>지원 범위</h3>
+            <div class="grid" aria-label="Support categories">
+              <div class="card">
+                <strong>설치와 실행</strong>
+                <span>Microsoft Store 설치, 직접 설치, 실행 오류, 업데이트 관련 문제</span>
+              </div>
+              <div class="card">
+                <strong>기능 문제</strong>
+                <span>정리, 진단, 중복 탐지, 디스크 상태, 네트워크 진단 등 앱 기능 오류</span>
+              </div>
+              <div class="card">
+                <strong>개인정보 문의</strong>
+                <span>로컬 로그, 정리 대상, 네트워크 요청, 지원 과정에서 공유한 정보 관련 문의</span>
+              </div>
+            </div>
+
+            <h3>문의할 때 포함하면 좋은 정보</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>항목</th>
+                    <th>예시</th>
+                    <th>이유</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>앱 버전</td>
+                    <td>PC Bareun 0.4.6</td>
+                    <td>이미 수정된 문제인지 확인하는 데 필요합니다.</td>
+                  </tr>
+                  <tr>
+                    <td>설치 경로</td>
+                    <td>Microsoft Store / GitHub Release / 직접 설치</td>
+                    <td>업데이트 방식과 권한 동작이 다를 수 있습니다.</td>
+                  </tr>
+                  <tr>
+                    <td>Windows 정보</td>
+                    <td>Windows 11 24H2, 빌드 번호</td>
+                    <td>Windows 버전별 파일 권한과 시스템 기능 차이를 확인합니다.</td>
+                  </tr>
+                  <tr>
+                    <td>문제가 발생한 기능</td>
+                    <td>임시 파일 정리, 중복 파일 탐지, 디스크 상태 등</td>
+                    <td>관련 로그와 코드 경로를 좁히는 데 도움이 됩니다.</td>
+                  </tr>
+                  <tr>
+                    <td>재현 단계</td>
+                    <td>1. 앱 실행 2. 임시 파일 정리 클릭 3. 스캔 중 오류</td>
+                    <td>같은 문제를 개발 환경에서 재현하기 위해 필요합니다.</td>
+                  </tr>
+                  <tr>
+                    <td>오류 메시지 또는 화면</td>
+                    <td>오류 문구, 스크린샷, 로컬 로그 일부</td>
+                    <td>원인을 빠르게 파악하는 데 도움이 됩니다.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="warning">
+              <strong>공개 이슈 작성 전 확인</strong>
+              <p>
+                GitHub Issues는 공개될 수 있습니다. 스크린샷, 로그, 파일 경로, 사용자 이름, 문서 이름, 계정 정보, 라이선스 정보 등
+                민감한 내용은 올리기 전에 가리거나 제거해 주세요.
+              </p>
+            </div>
+
+            <h3>설치와 업데이트</h3>
+            <ul>
+              <li>Microsoft Store에서 설치한 PC Bareun은 Microsoft Store를 통해 업데이트됩니다.</li>
+              <li>Store 업데이트가 보이지 않으면 Microsoft Store의 라이브러리 화면에서 업데이트 확인을 실행해 주세요.</li>
+              <li>GitHub 또는 직접 설치 버전은 배포 페이지의 최신 릴리스를 확인해 주세요.</li>
+              <li>같은 문제를 신고하기 전에 가능한 경우 최신 버전에서도 문제가 반복되는지 확인해 주세요.</li>
+            </ul>
+
+            <h3>로컬 로그</h3>
+            <p>오류 진단이 필요한 경우 PC Bareun의 로컬 로그가 아래 위치에 저장되어 있을 수 있습니다.</p>
+            <p><code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+            <p>로그는 사용자의 기기에만 저장되며, 사용자가 직접 첨부하지 않는 한 외부로 전송되지 않습니다.</p>
+
+            <h3>개인정보 문의</h3>
+            <p>
+              개인정보 처리 기준은 <a href="privacy.html">개인정보처리방침</a>에서 확인할 수 있습니다. 개인정보 관련 문의도 같은
+              GitHub Issues 경로로 접수할 수 있습니다.
+            </p>
+            </section>
+
+            <section class="localized-section" id="ja" lang="ja">
+              <h2>サポート連絡先情報 (日本語)</h2>
+              <p>
+                不具合報告、インストールに関する問題、機能要望、プライバシーに関するお問い合わせは、上記のサポート URL から GitHub Issue として送信してください。
+                GitHub Issues は公開される場合があります。投稿前に、ファイル内容、アカウント情報、ユーザー名、ファイルパス、スクリーンショットなどの機密情報を削除または伏せてください。
+              </p>
+
+              <h3>含めると役立つ情報</h3>
+              <ul>
+                <li>PC Bareun のアプリバージョン</li>
+                <li>インストール元: Microsoft Store、GitHub Release、直接インストール</li>
+                <li>Windows のバージョンとビルド番号</li>
+                <li>問題が発生した機能名</li>
+                <li>問題を再現する手順</li>
+                <li>エラーメッセージ、スクリーンショット、または関連するローカルログの抜粋</li>
+              </ul>
+
+              <h3>インストールと更新</h3>
+              <p>
+                Microsoft Store 版は Microsoft Store を通じて更新されます。GitHub または直接インストール版を利用している場合は、最新のリリースページから更新してください。
+                可能であれば、問い合わせ前に最新バージョンでも同じ問題が発生するか確認してください。
+              </p>
+
+              <h3>ローカルログ</h3>
+              <p>トラブルシューティング用のローカルログは、次の場所に保存されている場合があります。</p>
+              <p><code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+              <p>ログはユーザーの端末に保存され、ユーザーが共有しない限り外部へ送信されません。</p>
+
+              <h3>プライバシーに関するお問い合わせ</h3>
+              <p>
+                プライバシーに関する詳細は <a href="privacy.html">プライバシーポリシー</a> を確認してください。プライバシーに関するお問い合わせも同じ GitHub Issues のサポート窓口で受け付けます。
+              </p>
+            </section>
+          </section>
+        </article>
+
+        <p class="footer">PC Bareun legal and support page for public store metadata.</p>
+      </main>
+    </div>
   </body>
 </html>

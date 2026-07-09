@@ -1,186 +1,609 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PC Bareun Privacy Policy</title>
+    <meta
+      name="description"
+      content="PC Bareun privacy policy. PC Bareun processes PC cleanup and diagnostic data locally on the user's device by default."
+    />
     <style>
       :root {
         color-scheme: light dark;
+        --bg: #f5f7fb;
+        --paper: #ffffff;
+        --paper-soft: #f0f5ff;
+        --text: #172033;
+        --muted: #667085;
+        --border: #d9e1ee;
+        --accent: #2458e6;
+        --accent-strong: #173eb2;
+        --ok: #087443;
         font-family:
           Pretendard,
           -apple-system,
           BlinkMacSystemFont,
           "Segoe UI",
           sans-serif;
-        line-height: 1.6;
+        line-height: 1.68;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        color: #172033;
-        background: #f7f8fb;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(36, 88, 230, 0.10), transparent 30rem),
+          var(--bg);
       }
 
-      main {
-        width: min(920px, calc(100% - 32px));
+      a {
+        color: var(--accent);
+        text-underline-offset: 3px;
+      }
+
+      .shell {
+        width: min(1040px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 48px 0;
+        padding: 34px 0 54px;
       }
 
-      article {
-        padding: 32px;
-        border: 1px solid #d8deea;
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      .mark {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid var(--border);
         border-radius: 8px;
-        background: #ffffff;
+        background: var(--paper);
+        color: var(--accent-strong);
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 14px;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      nav a[aria-current="page"],
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 6px 0 24px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--accent-strong);
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
       }
 
       h1,
-      h2 {
+      h2,
+      h3 {
         line-height: 1.25;
       }
 
       h1 {
-        margin: 0 0 8px;
-        font-size: 32px;
+        max-width: 820px;
+        margin: 0;
+        font-size: clamp(32px, 5vw, 48px);
+      }
+
+      .lede {
+        max-width: 820px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .language-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .language-links a {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        padding: 0 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--paper);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      .document {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .notice {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--border);
+      }
+
+      .notice div {
+        padding: 18px;
+        background: var(--paper-soft);
+      }
+
+      .notice strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--ok);
+      }
+
+      .content {
+        padding: 34px;
       }
 
       h2 {
-        margin-top: 32px;
-        font-size: 20px;
+        margin: 38px 0 10px;
+        font-size: 22px;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      h3 {
+        margin: 26px 0 8px;
+        font-size: 17px;
       }
 
       p,
-      li {
+      li,
+      td,
+      th {
         font-size: 15px;
       }
 
-      .meta {
-        margin: 0 0 28px;
-        color: #667085;
+      p {
+        margin: 10px 0;
       }
 
-      a {
-        color: #1f5eff;
+      ul {
+        margin: 10px 0 0;
+        padding-left: 1.25rem;
+      }
+
+      li + li {
+        margin-top: 4px;
+      }
+
+      .table-wrap {
+        margin: 16px 0 8px;
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        min-width: 720px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 13px 14px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--paper-soft);
+        font-weight: 750;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      code {
+        font-family: Consolas, "Cascadia Mono", monospace;
+        font-size: 0.94em;
+      }
+
+      .callout {
+        margin: 18px 0;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 8px;
+        background: var(--paper-soft);
+      }
+
+      .localized-section {
+        margin-top: 42px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          justify-content: flex-start;
+        }
+
+        .notice {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          padding: 24px;
+        }
       }
 
       @media (prefers-color-scheme: dark) {
-        body {
-          color: #e7edf8;
-          background: #101624;
-        }
-
-        article {
-          border-color: #263248;
-          background: #141c2b;
-        }
-
-        .meta {
-          color: #aab4c5;
-        }
-
-        a {
-          color: #8fb2ff;
+        :root {
+          --bg: #101624;
+          --paper: #141c2b;
+          --paper-soft: #182237;
+          --text: #e7edf8;
+          --muted: #aab4c5;
+          --border: #29354c;
+          --accent: #90b4ff;
+          --accent-strong: #b7ccff;
+          --ok: #75dda8;
         }
       }
     </style>
   </head>
   <body>
-    <main>
-      <article>
-        <h1>PC Bareun Privacy Policy</h1>
-        <p class="meta">Last updated: 2026-06-18</p>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">
+          <span class="mark" aria-hidden="true">PC</span>
+          <span>PC Bareun</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Website</a>
+          <a href="privacy.html" aria-current="page">Privacy</a>
+          <a href="support.html">Support</a>
+        </nav>
+      </header>
 
-        <h2>개인정보 처리방침</h2>
-        <p>
-          PC Bareun은 Windows PC 관리 유틸리티입니다. 이 앱은 임시 파일 정리, 설치 프로그램 관리, 서비스 및 작업 스케줄러 관리,
-          하드웨어 상태 확인, 개발 환경 최적화 등의 기능을 제공합니다.
-        </p>
+      <main>
+        <section class="hero">
+          <p class="eyebrow">Last updated: 2026-07-09</p>
+          <h1>PC Bareun Privacy Policy</h1>
+          <p class="lede">
+            PC Bareun is a Windows desktop utility for PC cleanup, diagnostics, and local system management. Cleanup and diagnostic data is
+            processed locally by default. The app does not collect data for advertising or user tracking.
+          </p>
+          <div class="language-links" aria-label="Language sections">
+            <a href="#en">English</a>
+            <a href="#ko">한국어</a>
+            <a href="#ja">日本語</a>
+          </div>
+        </section>
 
-        <h2>수집하는 정보</h2>
-        <p>PC Bareun은 기본적으로 사용자의 개인정보를 외부 서버로 전송하거나 판매하지 않습니다.</p>
-        <p>앱 기능 수행을 위해 사용자의 기기 안에서 다음과 같은 정보를 읽을 수 있습니다.</p>
-        <ul>
-          <li>디스크, 폴더, 파일 이름 및 파일 크기</li>
-          <li>설치된 프로그램 목록</li>
-          <li>Windows 서비스 및 작업 스케줄러 항목</li>
-          <li>시스템 로그 또는 진단 정보</li>
-          <li>브라우저 캐시, 임시 파일, 레지스트리 MRU 등 정리 대상 후보</li>
-          <li>개발 도구, AI 모델 파일, 환경변수, PATH 정보</li>
-        </ul>
-        <p>이 정보는 기능 실행과 화면 표시를 위해 로컬 기기에서 처리됩니다.</p>
+        <article class="document">
+          <section class="notice" aria-label="Privacy highlights">
+            <div>
+              <strong>Local-first processing</strong>
+              <span>Scan, cleanup, and diagnostic results are calculated on the user's device for app functionality.</span>
+            </div>
+            <div>
+              <strong>No ads or tracking</strong>
+              <span>PC Bareun does not include advertising SDKs, analytics SDKs, or user tracking SDKs.</span>
+            </div>
+            <div>
+              <strong>User-confirmed actions</strong>
+              <span>Deletion and system changes run only for items selected and confirmed by the user.</span>
+            </div>
+          </section>
 
-        <h2>외부 전송</h2>
-        <p>
-          PC Bareun은 앱 업데이트 확인을 위해 GitHub Releases 또는 업데이트 프록시 서버에 접속할 수 있습니다. 이 과정에서 앱 버전
-          확인에 필요한 네트워크 요청이 발생할 수 있습니다.
-        </p>
-        <p>PC Bareun은 별도의 분석 SDK, 광고 SDK, 사용자 추적 SDK를 포함하지 않습니다.</p>
+          <section class="content">
+            <h2 id="en">1. Scope</h2>
+            <p>
+              This privacy policy applies to the PC Bareun Windows app and its public Microsoft Store listing. PC Bareun provides PC
+              management features such as temporary file cleanup, duplicate file detection, disk health checks, installed program review,
+              service and startup item review, BSOD analysis, and network diagnostics.
+            </p>
 
-        <h2>사용자가 선택한 작업</h2>
-        <p>
-          사용자가 직접 실행한 정리, 삭제, 비활성화, 최적화 작업은 사용자의 기기에 변경을 일으킬 수 있습니다. PC Bareun은 위험한
-          작업에 대해 경고와 확인 단계를 제공하며, 가능한 경우 복원 지점 또는 백업 안내를 제공합니다.
-        </p>
+            <h2>2. Core Principles</h2>
+            <ul>
+              <li>PC Bareun does not require a user account or sign-in.</li>
+              <li>PC Bareun does not collect data for advertising, behavioral tracking, or marketing profiling.</li>
+              <li>File deletion, program removal, and system-setting changes run only after the user selects and confirms the action.</li>
+              <li>Paths, file names, screenshots, and logs may contain personal information, so users should review them before sharing.</li>
+            </ul>
 
-        <h2>로그</h2>
-        <p>
-          PC Bareun은 오류 진단을 위해 로컬 로그를 저장할 수 있습니다. 로그는 사용자의 기기에 저장되며, 사용자가 직접 공유하지 않는 한
-          외부로 전송되지 않습니다.
-        </p>
-        <p>기본 로그 위치: <code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+            <h2>3. Information The App May Access Or Process On Your Device</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Examples</th>
+                    <th>Purpose</th>
+                    <th>External Transfer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Files and storage</td>
+                    <td>File names, paths, sizes, modified dates, folder structure, duplicate candidates</td>
+                    <td>Storage analysis, temporary file cleanup, duplicate detection, and pre-deletion review</td>
+                    <td>Not automatically transmitted</td>
+                  </tr>
+                  <tr>
+                    <td>Windows management data</td>
+                    <td>Installed programs, startup items, Windows services, scheduled tasks</td>
+                    <td>Display system state and perform user-requested management actions</td>
+                    <td>Not automatically transmitted</td>
+                  </tr>
+                  <tr>
+                    <td>Diagnostics</td>
+                    <td>Disk status, memory, network status, BSOD events, error messages</td>
+                    <td>PC status review, troubleshooting, and app error diagnosis</td>
+                    <td>Not automatically transmitted</td>
+                  </tr>
+                  <tr>
+                    <td>Browser and privacy cleanup candidates</td>
+                    <td>Browser cache, cookies, history, recent-use traces, MRU entries</td>
+                    <td>Provide user-selected privacy trace cleanup</td>
+                    <td>Not automatically transmitted</td>
+                  </tr>
+                  <tr>
+                    <td>Development environment data</td>
+                    <td>AI model files, developer tool caches, environment variables, PATH information</td>
+                    <td>Show cleanup candidates and perform user-requested management actions</td>
+                    <td>Not automatically transmitted</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-        <h2>문의</h2>
-        <p>
-          개인정보 또는 앱 지원 문의는
-          <a href="https://github.com/teemoZipsa/PCBareun/issues">GitHub Issues</a>를 통해 접수할 수 있습니다.
-        </p>
+            <h2>4. Local Storage</h2>
+            <p>
+              PC Bareun may store app settings, language and theme preferences, recent app state, feature results, and troubleshooting logs on
+              the user's device. Local logs may include feature names, error messages, file paths, or file names.
+            </p>
+            <p>Default log location: <code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+            <p>This information is used to diagnose app issues and provide user-requested features reliably.</p>
 
-        <h2>Privacy Policy</h2>
-        <p>
-          PC Bareun is a Windows PC management utility. It provides features such as temporary file cleanup, installed program management,
-          Windows service and task scheduler management, hardware status checks, and development environment optimization.
-        </p>
+            <h2>5. Network Requests</h2>
+            <p>
+              PC Bareun does not automatically upload cleanup results, file lists, or diagnostic results to external servers. Network requests
+              may occur only when required for user-initiated actions such as:
+            </p>
+            <ul>
+              <li>Opening the website, support page, or GitHub links</li>
+              <li>Running network diagnostics or speed tests</li>
+              <li>Manually checking for updates in non-Microsoft Store direct-distribution builds</li>
+            </ul>
+            <p>Microsoft Store builds are updated through Microsoft Store.</p>
 
-        <h2>Information Processed</h2>
-        <p>PC Bareun does not sell personal information or send personal data to external servers by default.</p>
-        <p>To perform its features, the app may read the following information locally on the user's device:</p>
-        <ul>
-          <li>Disk, folder, file name, and file size information</li>
-          <li>Installed program lists</li>
-          <li>Windows services and scheduled tasks</li>
-          <li>System logs or diagnostic information</li>
-          <li>Browser cache, temporary files, registry MRU entries, and other cleanup candidates</li>
-          <li>Development tools, AI model files, environment variables, and PATH information</li>
-        </ul>
-        <p>This information is processed locally for app functionality and display.</p>
+            <h2>6. Third-Party Sharing And Sale</h2>
+            <p>
+              PC Bareun does not sell personal information. It also does not provide file contents, cleanup results, or diagnostic results to
+              advertising companies or analytics services. If a user posts a GitHub Issue or manually attaches logs, that information is shared
+              by the user's own action.
+            </p>
 
-        <h2>Network Access</h2>
-        <p>
-          PC Bareun may connect to GitHub Releases or an update proxy server to check for app updates. This can create network requests
-          required for version checks.
-        </p>
-        <p>PC Bareun does not include analytics SDKs, advertising SDKs, or user tracking SDKs.</p>
+            <h2>7. User Controls</h2>
+            <ul>
+              <li>Users can review and choose cleanup or deletion targets before applying changes.</li>
+              <li>Users can remove sensitive paths, file names, screenshots, or log content before sharing anything publicly.</li>
+              <li>Users can remove local auxiliary data by uninstalling the app or deleting local settings and logs.</li>
+              <li>Privacy inquiries can be submitted through the support path below.</li>
+            </ul>
 
-        <h2>User-Initiated Actions</h2>
-        <p>
-          Cleanup, deletion, disabling, and optimization actions initiated by the user may change the user's device. PC Bareun provides
-          warnings and confirmation steps for risky actions and provides restore point or backup guidance where possible.
-        </p>
+            <div class="callout">
+              <strong>Contact:</strong>
+              <a href="https://github.com/teemoZipsa/PCBareun/issues">https://github.com/teemoZipsa/PCBareun/issues</a>
+            </div>
 
-        <h2>Logs</h2>
-        <p>
-          PC Bareun may store local logs for troubleshooting. Logs are stored on the user's device and are not transmitted externally unless
-          the user shares them manually.
-        </p>
-        <p>Default log location: <code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+            <h2>8. Changes</h2>
+            <p>
+              This privacy policy may be updated when app features, storage behavior, or network behavior changes. Updates will be posted on
+              this page.
+            </p>
 
-        <h2>Contact</h2>
-        <p>
-          Privacy or support inquiries can be submitted through
-          <a href="https://github.com/teemoZipsa/PCBareun/issues">GitHub Issues</a>.
-        </p>
-      </article>
-    </main>
+            <section class="localized-section" id="ko" lang="ko">
+            <h2>개인정보처리방침 (한국어)</h2>
+
+            <h3>1. 적용 대상</h3>
+            <p>
+              이 개인정보처리방침은 PC Bareun(PC 바른) Windows 앱과 이 앱의 Microsoft Store 등록 정보에 적용됩니다. PC Bareun은
+              임시 파일 정리, 중복 파일 탐지, 디스크 상태 확인, 설치 프로그램 검토, 서비스 및 시작 항목 확인, BSOD 분석,
+              네트워크 진단 같은 PC 관리 기능을 제공합니다.
+            </p>
+
+            <h3>2. 핵심 원칙</h3>
+            <ul>
+              <li>PC Bareun은 사용자 계정을 만들거나 로그인을 요구하지 않습니다.</li>
+              <li>PC Bareun은 광고 표시, 사용자 행동 추적, 마케팅 프로파일링을 위해 데이터를 수집하지 않습니다.</li>
+              <li>파일 삭제, 프로그램 제거, 시스템 설정 변경 등은 사용자가 직접 선택하고 확인한 경우에만 실행됩니다.</li>
+              <li>앱이 표시하는 경로, 파일명, 로그 내용에는 개인 정보가 포함될 수 있으므로 공유 전 사용자가 검토해야 합니다.</li>
+            </ul>
+
+            <h3>3. 앱이 기기에서 접근하거나 처리할 수 있는 정보</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>구분</th>
+                    <th>예시</th>
+                    <th>사용 목적</th>
+                    <th>외부 전송</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>파일 및 저장공간 정보</td>
+                    <td>파일명, 경로, 크기, 수정일, 폴더 구조, 중복 후보</td>
+                    <td>공간 분석, 임시 파일 정리, 중복 파일 탐지, 삭제 전 확인</td>
+                    <td>자동 전송하지 않음</td>
+                  </tr>
+                  <tr>
+                    <td>Windows 관리 정보</td>
+                    <td>설치된 프로그램, 시작 프로그램, 서비스, 작업 스케줄러 항목</td>
+                    <td>사용자에게 상태를 보여주고 사용자가 요청한 관리 작업 수행</td>
+                    <td>자동 전송하지 않음</td>
+                  </tr>
+                  <tr>
+                    <td>진단 정보</td>
+                    <td>디스크 상태, 메모리, 네트워크 상태, BSOD 이벤트, 오류 메시지</td>
+                    <td>PC 상태 확인, 문제 원인 분석, 앱 오류 진단</td>
+                    <td>자동 전송하지 않음</td>
+                  </tr>
+                  <tr>
+                    <td>브라우저 및 사용 흔적 정리 후보</td>
+                    <td>브라우저 캐시, 쿠키, 방문 기록, 최근 사용 기록, MRU 항목</td>
+                    <td>사용자가 선택한 개인정보 흔적 정리 기능 제공</td>
+                    <td>자동 전송하지 않음</td>
+                  </tr>
+                  <tr>
+                    <td>개발 환경 정보</td>
+                    <td>AI 모델 파일, 개발 도구 캐시, 환경변수, PATH 정보</td>
+                    <td>개발 환경 정리 후보 표시 및 사용자가 요청한 관리 작업 수행</td>
+                    <td>자동 전송하지 않음</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>4. 로컬 저장 정보</h3>
+            <p>
+              PC Bareun은 앱 설정, 언어와 테마 설정, 최근 실행 상태, 기능 실행 결과, 오류 진단 로그를 사용자의 기기에 저장할 수
+              있습니다. 로컬 로그에는 기능 이름, 오류 메시지, 파일 경로 또는 파일명이 포함될 수 있습니다.
+            </p>
+            <p>기본 로그 위치: <code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+            <p>이 정보는 앱 문제를 진단하고 사용자가 요청한 기능을 안정적으로 제공하기 위해 사용됩니다.</p>
+
+            <h3>5. 네트워크 요청</h3>
+            <p>
+              PC Bareun은 정리 결과, 파일 목록, 시스템 진단 결과를 자동으로 외부 서버에 업로드하지 않습니다. 다만 다음 작업에서는
+              기능 수행을 위해 네트워크 요청이 발생할 수 있습니다.
+            </p>
+            <ul>
+              <li>사용자가 웹사이트, 지원 페이지, GitHub 링크를 여는 경우</li>
+              <li>사용자가 네트워크 진단 또는 속도 테스트 기능을 실행하는 경우</li>
+              <li>Microsoft Store가 아닌 직접 배포판에서 사용자가 업데이트 확인 기능을 실행하는 경우</li>
+            </ul>
+            <p>Microsoft Store 버전의 앱 업데이트는 Microsoft Store 업데이트 체계를 따릅니다.</p>
+
+            <h3>6. 제3자 제공 및 판매</h3>
+            <p>
+              PC Bareun은 개인정보를 판매하지 않습니다. 또한 앱에서 처리한 파일 내용, 정리 결과, 진단 결과를 광고 회사나 분석
+              서비스에 제공하지 않습니다. 사용자가 GitHub Issues에 문의를 남기거나 로그를 직접 첨부하는 경우, 해당 내용은 사용자가
+              선택하여 공유한 정보로 처리됩니다.
+            </p>
+
+            <h3>7. 사용자 통제</h3>
+            <ul>
+              <li>사용자는 정리 또는 삭제 전에 대상 항목을 검토하고 선택할 수 있습니다.</li>
+              <li>사용자는 공유 전 로그 파일에서 개인 경로, 파일명, 스크린샷 등 민감한 내용을 제거할 수 있습니다.</li>
+              <li>사용자는 앱 제거 또는 로컬 설정/로그 삭제를 통해 PC Bareun이 기기에 저장한 보조 데이터를 제거할 수 있습니다.</li>
+              <li>개인정보 관련 문의는 아래 지원 경로로 접수할 수 있습니다.</li>
+            </ul>
+
+            <div class="callout">
+              <strong>문의:</strong>
+              <a href="https://github.com/teemoZipsa/PCBareun/issues">https://github.com/teemoZipsa/PCBareun/issues</a>
+            </div>
+
+            <h3>8. 변경 사항</h3>
+            <p>
+              앱 기능, 저장 방식, 네트워크 사용 방식이 달라지는 경우 이 개인정보처리방침을 업데이트할 수 있습니다. 변경된 내용은 이
+              페이지에 게시됩니다.
+            </p>
+            </section>
+
+            <section class="localized-section" id="ja" lang="ja">
+              <h2>プライバシーポリシー (日本語)</h2>
+              <p>
+                PC Bareun は、Windows PC のクリーンアップ、診断、ローカル管理を支援するデスクトップアプリです。クリーンアップ結果や診断情報は、基本的にユーザーの端末内で処理されます。
+                PC Bareun は広告 SDK、分析 SDK、ユーザー追跡 SDK を含まず、個人情報を販売しません。
+              </p>
+
+              <h3>端末上で処理される情報</h3>
+              <p>
+                PC Bareun は、ユーザーが選択した機能を提供するために、ファイル名、パス、サイズ、更新日、フォルダー構造、一時ファイル、ブラウザーキャッシュ、最近使用した項目、インストール済みプログラム、スタートアップ項目、Windows サービス、タスクスケジューラー項目、ディスク状態、メモリ、ハードウェア、ネットワーク状態、BSOD イベント、エラーメッセージ、開発ツールのキャッシュ、AI モデルファイル、環境変数、PATH 情報などを端末上で確認する場合があります。
+              </p>
+
+              <h3>ネットワーク通信</h3>
+              <p>
+                PC Bareun は、ファイルの内容、クリーンアップ結果、診断結果を自動的に外部サーバーへアップロードしません。ユーザーが Web サイト、サポートページ、GitHub リンクを開く場合、ネットワーク診断や速度テストを実行する場合、または Microsoft Store 版ではない直接配布版で更新確認を実行する場合に、必要なネットワーク要求が発生することがあります。Microsoft Store 版の更新は Microsoft Store を通じて提供されます。
+              </p>
+
+              <h3>ローカルログとユーザーの管理</h3>
+              <p>
+                PC Bareun は、設定やトラブルシューティング用ログをユーザーの端末に保存する場合があります。ログにはローカルパス、ファイル名、機能名、エラーメッセージが含まれることがあります。公開された場所へ共有する前に内容を確認してください。
+              </p>
+              <p>既定のログ保存場所: <code>%LOCALAPPDATA%\com.pcbareun.app\logs\</code></p>
+
+              <h3>お問い合わせ</h3>
+              <p>
+                プライバシーまたはサポートに関するお問い合わせは
+                <a href="https://github.com/teemoZipsa/PCBareun/issues">GitHub Issues</a> から送信できます。
+              </p>
+            </section>
+          </section>
+        </article>
+
+        <p class="footer">PC Bareun legal and support page for public store metadata.</p>
+      </main>
+    </div>
   </body>
 </html>

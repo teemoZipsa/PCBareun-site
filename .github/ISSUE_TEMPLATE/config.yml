@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 지원 안내
+    url: https://teemozipsa.github.io/PCBareun-site/support.html
+    about: 설치, 업데이트, 진단 자료와 개인정보 확인 방법을 먼저 살펴보세요.
+  - name: 개인정보처리방침
+    url: https://teemozipsa.github.io/PCBareun-site/privacy.html
+    about: PC 바른의 로컬 처리와 네트워크 사용 범위를 확인하세요.

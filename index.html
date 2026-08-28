@@ -517,9 +517,9 @@
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
           GitHub
         </a>
-        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-primary">
+        <a href="https://apps.microsoft.com/detail/9NJ36D4PLJ8H" class="btn btn-primary" target="_blank" rel="noreferrer">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          다운로드
+          Microsoft Store
         </a>
       </div>
     </div>
@@ -531,8 +531,8 @@
     <div class="wrap hero-inner">
       <span class="eyebrow">
         <span class="dot"></span>
-        <span class="pill">v0.4.2</span>
-        2026.07.04 · 최신 릴리즈가 도착했습니다
+        <span class="pill">Store v0.7.3</span>
+        Direct v0.4.2 · 채널별 최신 안정판
       </span>
 
       <h1>
@@ -546,13 +546,13 @@
       </p>
 
       <div class="hero-ctas">
-        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-primary btn-lg">
+        <a href="https://apps.microsoft.com/detail/9NJ36D4PLJ8H" class="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-          Windows용 다운로드
+          Microsoft Store v0.7.3
         </a>
-        <a href="#release" class="btn btn-ghost btn-lg">
-          <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke-linecap="round"/></svg>
-          릴리즈 노트
+        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-ghost btn-lg">
+          <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          직접 설치 v0.4.2
         </a>
       </div>
 
@@ -561,7 +561,7 @@
         <span>•</span>
         <span>완전 무료 · 광고 없음</span>
         <span>•</span>
-        <span>WebView2 포함 설치 파일 · Tauri v2 네이티브</span>
+        <span>Store 자동 업데이트 · Direct 설치 파일 제공</span>
       </div>
     </div>
 
@@ -758,10 +758,15 @@
       </div>
 
       <div class="release-wrap">
-        <div class="release-list" role="tablist">
-          <button class="release-pill active" data-rel="v042" type="button">
+        <div class="release-list" role="tablist" aria-label="릴리즈 버전" aria-orientation="vertical">
+          <button class="release-pill active" data-rel="v073" type="button">
+            <span class="ver">v0.7.3</span>
+            <span class="label">관리자 안내 · 자동 시작</span>
+            <span class="date">Aug 2026</span>
+          </button>
+          <button class="release-pill" data-rel="v042" type="button">
             <span class="ver">v0.4.2</span>
-            <span class="label">Store 안정화 · 공간 추천</span>
+            <span class="label">Direct · 공간 추천</span>
             <span class="date">Jul 2026</span>
           </button>
           <button class="release-pill" data-rel="v032" type="button">
@@ -802,9 +807,32 @@
         </div>
 
         <div class="release-doc">
-          <div data-doc="v042">
+          <div data-doc="v073">
+            <h3>관리자 권한 안내와 Store 자동 시작 개선 <span class="v">v0.7.3</span></h3>
+            <div class="updated">Microsoft Store 채널 · 현재 배포 중</div>
+
+            <div class="group">
+              <h4>관리자 모드 안내 <span class="badge feat">UX</span></h4>
+              <ul>
+                <li><strong>현재 권한 상태 표시</strong> — 설정에서 PC 바른이 일반 권한인지 관리자 권한인지 확인하고 관련 안내를 볼 수 있습니다.</li>
+                <li><strong>권한 차이 경고</strong> — 관리자 권한 앱과 함께 사용할 때 일부 상호작용이 제한될 수 있음을 알려 주며, 경고는 설정에서 끌 수 있습니다.</li>
+                <li><strong>Direct 전용 권한 제어</strong> — 직접 설치판은 UAC 확인을 거쳐 관리자 권한으로 다시 시작하거나 항상 관리자 권한 실행을 선택할 수 있습니다.</li>
+              </ul>
+            </div>
+
+            <div class="group">
+              <h4>Store 자동 시작 <span class="badge sec">STORE</span></h4>
+              <ul>
+                <li><strong>Windows StartupTask 적용</strong> — Store판의 ‘Windows 시작 시 자동 실행’을 공식 StartupTask 방식으로 수정했습니다.</li>
+                <li><strong>사용자 선택 보존</strong> — Windows에서 직접 끈 상태나 조직 정책을 덮어쓰지 않고, 필요한 경우 시작 앱 설정으로 안내합니다.</li>
+                <li><strong>무료 범위 유지</strong> — 유료 상품, 구매 화면, 기능 잠금 없이 모든 기능을 무료로 제공합니다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-doc="v042" hidden>
             <h3>Store 안정화와 공간 확보 추천 개선 <span class="v">v0.4.2</span></h3>
-            <div class="updated">최신 릴리즈 · 2026.07.04</div>
+            <div class="updated">Direct 최신 릴리즈 · 2026.07.04</div>
 
             <div class="group">
               <h4>Store 안정화 <span class="badge sec">STORE</span></h4>
@@ -1098,19 +1126,19 @@
     <div class="wrap cta-inner">
       <span class="section-tag" style="color:#5fc8cd;">GET STARTED</span>
       <h2>광고 없이, 무료로,<br/>당신의 PC를 바르게.</h2>
-      <p>최신 Windows 설치 파일을 내려받아 실행하면 됩니다.</p>
+      <p>Microsoft Store 또는 직접 설치 채널을 선택하세요.</p>
       <div class="hero-ctas">
-        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-primary btn-lg">
+        <a href="https://apps.microsoft.com/detail/9NJ36D4PLJ8H" class="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
           <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          v0.4.2 Windows용 다운로드
+          Microsoft Store v0.7.3
         </a>
-        <a href="#release" class="btn btn-on-dark btn-lg">
-          <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-linejoin="round"/><path d="M14 2v6h6" stroke-linecap="round"/></svg>
-          변경 내역 보기
+        <a href="https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe" class="btn btn-on-dark btn-lg">
+          <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          직접 설치 v0.4.2
         </a>
       </div>
       <div class="hero-meta">
-        <span><span class="dot"></span> 현재 안정 버전 · 공식 다운로드 제공 · Store Safe Edition 준비 중</span>
+        <span><span class="dot"></span> Microsoft Store v0.7.3 · Direct v0.4.2 · 무료 · 광고 없음</span>
       </div>
     </div>
   </section>
@@ -1148,8 +1176,8 @@
           <h5>연락처</h5>
           <ul>
             <li><a href="https://github.com/teemoZipsa/PCBareun-site" target="_blank" rel="noreferrer">GitHub</a></li>
-            <li><a href="https://github.com/teemoZipsa/PCBareun-site/issues" target="_blank" rel="noreferrer">문의하기</a></li>
-            <li><a href="https://github.com/teemoZipsa/PCBareun-site/issues" target="_blank" rel="noreferrer">버그 신고</a></li>
+            <li><a href="https://github.com/teemoZipsa/PCBareun-site/issues/new/choose" target="_blank" rel="noreferrer">문의하기</a></li>
+            <li><a href="https://github.com/teemoZipsa/PCBareun-site/issues/new/choose" target="_blank" rel="noreferrer">버그 신고</a></li>
           </ul>
         </div>
       </div>
@@ -1162,16 +1190,47 @@
 
   <script>
     // Release notes tab switcher
-    const pills = document.querySelectorAll('.release-pill');
-    const docs = document.querySelectorAll('[data-doc]');
-    pills.forEach(p => {
-      p.addEventListener('click', () => {
-        pills.forEach(x => x.classList.remove('active'));
-        p.classList.add('active');
-        const id = p.dataset.rel;
-        docs.forEach(d => { d.hidden = d.dataset.doc !== id; });
+    const pills = Array.from(document.querySelectorAll('.release-pill'));
+    const docs = Array.from(document.querySelectorAll('[data-doc]'));
+
+    const activateRelease = (pill, focus = false) => {
+      const id = pill.dataset.rel;
+      pills.forEach(item => {
+        const selected = item === pill;
+        item.classList.toggle('active', selected);
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+      docs.forEach(doc => { doc.hidden = doc.dataset.doc !== id; });
+      if (focus) pill.focus();
+    };
+
+    pills.forEach((pill, index) => {
+      const id = pill.dataset.rel;
+      const doc = docs.find(item => item.dataset.doc === id);
+      pill.id = `release-tab-${id}`;
+      pill.setAttribute('role', 'tab');
+      pill.setAttribute('aria-controls', `release-panel-${id}`);
+      if (doc) {
+        doc.id = `release-panel-${id}`;
+        doc.setAttribute('role', 'tabpanel');
+        doc.setAttribute('aria-labelledby', pill.id);
+      }
+
+      pill.addEventListener('click', () => activateRelease(pill));
+      pill.addEventListener('keydown', event => {
+        let nextIndex = index;
+        if (event.key === 'ArrowDown' || event.key === 'ArrowRight') nextIndex = (index + 1) % pills.length;
+        else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') nextIndex = (index - 1 + pills.length) % pills.length;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = pills.length - 1;
+        else return;
+        event.preventDefault();
+        activateRelease(pills[nextIndex], true);
       });
     });
+
+    activateRelease(pills.find(pill => pill.classList.contains('active')) || pills[0]);
   </script>
 </body>
 </html>

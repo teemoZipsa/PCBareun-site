@@ -4,11 +4,11 @@
 
 **Windows PC 정리와 진단을 한곳에서.**
 
-Windows 10/11을 위한 무료 PC 정리·진단 유틸리티 · 최신 안정 버전 v0.4.2
+Windows 10/11을 위한 무료 PC 정리·진단 유틸리티 · Microsoft Store v0.7.3 · Direct v0.4.2
 
 [![공식 사이트](https://img.shields.io/badge/🌐_공식_사이트-teemozipsa.github.io-6C5CE7?style=for-the-badge)](https://teemozipsa.github.io/PCBareun-site/)
-[![다운로드](https://img.shields.io/badge/📥_다운로드-v0.4.2-00cec9?style=for-the-badge)](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)
-[![Windows](https://img.shields.io/badge/Windows_10%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-v0.7.3-0078D4?style=for-the-badge&logo=microsoft)](https://apps.microsoft.com/detail/9NJ36D4PLJ8H)
+[![Direct 다운로드](https://img.shields.io/badge/Direct-v0.4.2-00cec9?style=for-the-badge)](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)
 
 </div>
 
@@ -19,8 +19,10 @@ Windows 10/11을 위한 무료 PC 정리·진단 유틸리티 · 최신 안정 �
 이 저장소는 PC 바른의 공개 홈페이지와 릴리즈 노트를 관리합니다.
 
 - 공식 사이트: <https://teemozipsa.github.io/PCBareun-site/>
-- 다운로드: <https://pcbareun-updater-proxy.teemozipsa.workers.dev/download>
+- Microsoft Store: <https://apps.microsoft.com/detail/9NJ36D4PLJ8H>
+- Direct 다운로드: <https://pcbareun-updater-proxy.teemozipsa.workers.dev/download>
 - 릴리즈 노트: [`release_notes.md`](release_notes.md)
+- 피드백: <https://github.com/teemoZipsa/PCBareun-site/issues/new/choose>
 
 ---
 
@@ -45,13 +47,16 @@ Windows 10/11을 위한 무료 PC 정리·진단 유틸리티 · 최신 안정 �
 - **AI·개발 환경 정리** — 대용량 AI 모델 탐지, Ollama 모델 정리, 개발 캐시 확인
 - **다국어 지원** — 한국어, English, 日本語
 
-Store 제출용 무료판은 정리·진단 중심으로 구성하고, 시스템 변경 폭이 큰 고급 제어 기능은 직접 다운로드 빌드나 별도 에디션에서 분리합니다.
+Microsoft Store판은 정리·진단 중심으로 구성하고, 시스템 변경 폭이 큰 고급 제어 기능은 직접 다운로드 빌드에서 분리합니다.
 
 ---
 
 ## 다운로드
 
-**[👉 v0.4.2 최신 버전 다운로드](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)**
+- **[Microsoft Store v0.7.3 설치](https://apps.microsoft.com/detail/9NJ36D4PLJ8H)**
+- **[Direct v0.4.2 설치 파일 다운로드](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)**
+
+두 배포 채널의 버전은 서로 다릅니다. Store판은 Microsoft Store에서 업데이트되고, Direct판은 GitHub Release 설치 파일과 앱 내 업데이트 경로를 사용합니다.
 
 ### 시스템 요구사항
 

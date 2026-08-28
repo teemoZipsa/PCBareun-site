@@ -1,0 +1,95 @@
+name: 버그 신고
+description: PC 바른에서 반복되는 오류나 예상과 다른 동작을 알려주세요.
+title: "[버그] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        신고해 주셔서 감사합니다. 공개 이슈에는 사용자 이름, 계정 정보, 전체 파일 경로, 문서 이름, 로그 원문 같은 민감한 내용을 올리지 마세요.
+
+  - type: input
+    id: version
+    attributes:
+      label: PC 바른 버전
+      description: 설정 화면이나 창 제목에 표시된 버전을 적어주세요.
+      placeholder: 예) 0.7.3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: channel
+    attributes:
+      label: 설치 경로
+      options:
+        - Microsoft Store
+        - GitHub Release / 직접 설치
+        - 잘 모르겠음
+    validations:
+      required: true
+
+  - type: dropdown
+    id: windows
+    attributes:
+      label: Windows 버전
+      options:
+        - Windows 11
+        - Windows 10
+        - 그 외 또는 잘 모르겠음
+    validations:
+      required: true
+
+  - type: input
+    id: windows_build
+    attributes:
+      label: Windows 빌드 번호
+      description: 확인할 수 있다면 버전과 빌드 번호를 적어주세요.
+      placeholder: 예) Windows 11 24H2, 26100.x
+
+  - type: input
+    id: feature
+    attributes:
+      label: 문제가 발생한 기능
+      placeholder: 예) 임시 파일 정리, 시작 프로그램, 디스크 상태
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 단계
+      description: 문제를 다시 확인할 수 있도록 순서대로 적어주세요.
+      placeholder: |
+        1. PC 바른을 실행합니다.
+        2. ...
+        3. ...에서 오류가 나타납니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 동작
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 동작
+      description: 오류 문구가 있다면 민감한 정보를 제거한 뒤 적어주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 추가 자료
+      description: 스크린샷이나 설정 > 문제 해결에서 저장한 진단 JSON을 내용 확인 후 필요할 때만 직접 첨부하세요. 앱은 이를 자동 업로드하지 않습니다.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 개인정보 확인
+      options:
+        - label: 첨부 자료에서 사용자 이름, 계정 정보, 전체 파일 경로, 문서 이름, 라이선스 정보와 로그 원문 등 민감한 내용을 확인하고 제거했습니다.
+          required: true

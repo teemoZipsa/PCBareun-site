@@ -1,0 +1,62 @@
+name: 개선 제안
+description: 기능 발견성, 사용 흐름, 완성도를 높일 아이디어를 제안해주세요.
+title: "[제안] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        원하는 기능 이름보다 먼저, 지금 어떤 상황에서 무엇이 불편한지 알려주시면 우선순위를 판단하는 데 도움이 됩니다.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 해결하고 싶은 문제
+      description: 어떤 상황에서 무엇이 어렵거나 발견하기 힘든가요?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 제안하는 흐름
+      description: 사용자가 어디에서 무엇을 보고 어떤 결과를 얻으면 좋을지 적어주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 현재 사용 중인 대안
+      description: 지금은 이 문제를 어떻게 해결하고 있는지 알려주세요.
+
+  - type: dropdown
+    id: channel
+    attributes:
+      label: 주로 사용하는 설치 경로
+      options:
+        - Microsoft Store
+        - GitHub Release / 직접 설치
+        - 둘 다 사용함
+        - 잘 모르겠음
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: PC 바른 버전
+      placeholder: 예) 0.7.3
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 추가 맥락
+      description: 참고 화면이나 예시가 있다면 민감한 정보를 제거한 뒤 첨부해주세요.
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 제안 범위 확인
+      options:
+        - label: 공개 이슈에 개인정보나 민감한 로컬 정보를 포함하지 않았습니다.
+          required: true

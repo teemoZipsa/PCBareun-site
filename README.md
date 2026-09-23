@@ -4,10 +4,10 @@
 
 **Windows PC 정리와 진단을 한곳에서.**
 
-Windows 10/11을 위한 무료 PC 정리·진단 유틸리티 · Microsoft Store v0.7.3 · Direct v0.4.2
+Windows 10/11을 위한 무료 PC 정리·진단 유틸리티 · Microsoft Store · Direct v0.4.2
 
 [![공식 사이트](https://img.shields.io/badge/🌐_공식_사이트-teemozipsa.github.io-6C5CE7?style=for-the-badge)](https://teemozipsa.github.io/PCBareun-site/)
-[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-v0.7.3-0078D4?style=for-the-badge&logo=microsoft)](https://apps.microsoft.com/detail/9NJ36D4PLJ8H)
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Install-0078D4?style=for-the-badge&logo=microsoft)](https://apps.microsoft.com/detail/9NJ36D4PLJ8H)
 [![Direct 다운로드](https://img.shields.io/badge/Direct-v0.4.2-00cec9?style=for-the-badge)](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)
 
 </div>
@@ -53,7 +53,7 @@ Microsoft Store판은 정리·진단 중심으로 구성하고, 시스템 변경
 
 ## 다운로드
 
-- **[Microsoft Store v0.7.3 설치](https://apps.microsoft.com/detail/9NJ36D4PLJ8H)**
+- **[Microsoft Store에서 설치](https://apps.microsoft.com/detail/9NJ36D4PLJ8H)**
 - **[Direct v0.4.2 설치 파일 다운로드](https://github.com/teemoZipsa/PCBareun-site/releases/download/v0.4.2/PCBareun_0.4.2_x64-setup.exe)**
 
 두 배포 채널의 버전은 서로 다릅니다. Store판은 Microsoft Store에서 업데이트되고, Direct판은 GitHub Release 설치 파일과 앱 내 업데이트 경로를 사용합니다.
@@ -68,9 +68,7 @@ Microsoft Store판은 정리·진단 중심으로 구성하고, 시스템 변경
 
 ## 라이선스
 
-**Copyright © 2026 TeemoZipsa. All Rights Reserved.**
-
-이 소프트웨어는 무료로 제공되지만, 소스코드의 복제·수정·재배포는 허용되지 않습니다.
+이용 및 재배포 조건은 [라이선스 페이지](license.html)와 [LICENSE 원문](LICENSE)에서 확인할 수 있습니다.
 
 ---
 

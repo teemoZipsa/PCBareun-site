@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC 바른 이용 조건 | PC Bareun License</title>
+  <meta name="description" content="PC 바른 소프트웨어의 이용 및 재배포 조건입니다.">
+  <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f5f7fb;
+        --paper: #ffffff;
+        --paper-soft: #f0f5ff;
+        --text: #172033;
+        --muted: #667085;
+        --border: #d9e1ee;
+        --accent: #2458e6;
+        --accent-strong: #173eb2;
+        --warn: #a15c00;
+        font-family:
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.68;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(36, 88, 230, 0.10), transparent 30rem),
+          var(--bg);
+      }
+
+      a {
+        color: var(--accent);
+        text-underline-offset: 3px;
+      }
+
+      .shell {
+        width: min(1040px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 34px 0 54px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      .mark {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--paper);
+        color: var(--accent-strong);
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 14px;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      nav a[aria-current="page"],
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 6px 0 24px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--accent-strong);
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.25;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin: 0;
+        font-size: clamp(32px, 5vw, 48px);
+      }
+
+      .lede {
+        max-width: 820px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .language-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .language-links a {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        padding: 0 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--paper);
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      .document {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .contact {
+        padding: 24px;
+        background: var(--paper-soft);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .contact span {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .contact a {
+        font-size: 18px;
+        font-weight: 750;
+      }
+
+      .content {
+        padding: 34px;
+      }
+
+      h2 {
+        margin: 38px 0 10px;
+        font-size: 22px;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      h3 {
+        margin: 26px 0 8px;
+        font-size: 17px;
+      }
+
+      p,
+      li,
+      td,
+      th {
+        font-size: 15px;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 1.25rem;
+      }
+
+      li + li {
+        margin-top: 4px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 16px 0 8px;
+      }
+
+      .card {
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .card strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .table-wrap {
+        margin: 16px 0 8px;
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        min-width: 700px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 13px 14px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--paper-soft);
+        font-weight: 750;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .warning {
+        margin: 18px 0;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--warn);
+        border-radius: 8px;
+        background: var(--paper-soft);
+      }
+
+      code {
+        font-family: Consolas, "Cascadia Mono", monospace;
+        font-size: 0.94em;
+      }
+
+      .localized-section {
+        margin-top: 42px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        nav {
+          justify-content: flex-start;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          padding: 24px;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #101624;
+          --paper: #141c2b;
+          --paper-soft: #182237;
+          --text: #e7edf8;
+          --muted: #aab4c5;
+          --border: #29354c;
+          --accent: #90b4ff;
+          --accent-strong: #b7ccff;
+          --warn: #ffc46d;
+        }
+      }
+    
+    .license-text { margin: 0; padding: 28px; white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.7 Consolas, "Cascadia Mono", monospace; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true">PC</span><span>PC Bareun</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Website</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="license.html" aria-current="page">License</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">PC Bareun</p>
+        <h1>이용 조건 / License</h1>
+        <p class="lede">아래는 PC 바른의 <a href="LICENSE">LICENSE 원문</a>입니다. The Korean and English terms below reproduce the public LICENSE file.</p>
+      </section>
+      <article class="document"><pre class="license-text">Copyright (c) 2025 teemoZipsa (Seonkyu). All Rights Reserved.
+
+PC 바른 (PC Bareun) - 소프트웨어 라이선스
+
+본 소프트웨어 및 관련 소스코드의 저작권은 teemoZipsa (Seonkyu)에게 있습니다.
+
+허용 사항:
+- 개인적인 학습 및 참고 목적의 소스코드 열람
+
+금지 사항:
+- 소스코드의 복제, 수정, 병합, 재배포
+- 상업적 목적의 사용
+- 본 소프트웨어를 기반으로 한 파생 소프트웨어 제작
+- 서브라이선싱 또는 판매
+
+본 소프트웨어는 무료로 제공되지만, 위 조건에 동의하는 경우에만 사용이 허가됩니다.
+소프트웨어는 &quot;있는 그대로(AS IS)&quot; 제공되며, 어떠한 명시적 또는 묵시적 보증도 하지 않습니다.
+
+---
+
+Copyright (c) 2025 teemoZipsa (Seonkyu). All Rights Reserved.
+
+This software and its source code are the intellectual property of
+teemoZipsa (Seonkyu).
+
+PERMITTED:
+- Viewing the source code for personal learning and reference purposes only.
+
+PROHIBITED:
+- Copying, modifying, merging, or redistributing the source code.
+- Commercial use of any kind.
+- Creating derivative works based on this software.
+- Sublicensing or selling the software.
+
+This software is provided free of charge, but may only be used under the
+conditions stated above. THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY
+OF ANY KIND, EXPRESS OR IMPLIED.</pre></article>
+      <p class="footer"><a href="support.html">문의하기 / Support</a> · <a href="privacy.html">개인정보처리방침 / Privacy</a></p>
+    </main>
+  </div>
+</body>
+</html>
